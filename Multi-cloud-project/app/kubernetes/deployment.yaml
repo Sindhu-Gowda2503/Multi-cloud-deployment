@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-cloud-app
+  labels:
+    app: multi-cloud-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: multi-cloud
+  template:
+    metadata:
+      labels:
+        app: multi-cloud
+    spec:
+      containers:
+      - name: multi-cloud-app
+        image: 253490762662.dkr.ecr.us-west-2.amazonaws.com/multi-cloud-app:latest
+        ports:
+        - containerPort: 5000
+        

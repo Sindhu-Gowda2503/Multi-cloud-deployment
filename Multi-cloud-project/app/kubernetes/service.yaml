@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: multi-cloud-service
+spec:
+  selector:
+    app: multi-cloud-app
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5000
